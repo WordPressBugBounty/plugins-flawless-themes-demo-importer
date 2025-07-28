@@ -2,10 +2,10 @@
 Contributors: flawlesstheme
 Donate link: flawlessthemes.com
 Tags: content, data, demo, import, widgets
-Requires at least: 4.7
-Tested up to: 6.0
-Stable tag: 1.0.18
-Requires PHP: 5.6
+Requires at least: 7.4
+Tested up to: 6.8
+Stable tag: 1.0.19
+Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,10 @@ Yes, This plugin depends on One Click Demo Import plugin, Install both of the pl
 	
 	= 1.0.18 =
 	* Job Stack Demo added
+
+	= 1.0.19 =
+	* Updated minimum PHP version requirement to 7.4
+	* Compatibility testing with WordPress 6.8
 
 == Upgrade Notice ==
 
