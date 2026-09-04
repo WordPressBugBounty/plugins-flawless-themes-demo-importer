@@ -16,7 +16,7 @@
  * Plugin Name:       Flawless Themes Demo Importer
  * Plugin URI:        
  * Description:       Import Demo Content for Flawless Themes free version Themes 
- * Version:           1.0.19
+ * Version:           1.0.21
  * Author:            Flawless Themes
  * Author URI:        flawlessthemes.com
  * License:           GPL-2.0+
