@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) 
+    exit; // Exit if accessed directly
+
 /**
  * The file that defines the core plugin class
  *
@@ -72,7 +75,7 @@ class Flawless_Demo_Importer {
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'flawless-demo-importer';
+		$this->plugin_name = 'flawless-themes-demo-importer';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -220,173 +223,194 @@ class Flawless_Demo_Importer {
 
 
 
-if (!function_exists('flawlessthemes_importer_import_files')) {
+if (!function_exists('flawless_demo_importer_import_files')) {
 
-    function flawlessthemes_importer_import_files()
+    function flawless_demo_importer_import_files()
     {
-	function ocdi_plugin_intro_text( $default_text ) {
+	function flawless_demo_importer_ocdi_plugin_intro_text( $default_text ) {
 	    $default_text .= '<div class="ocdi__intro-text"><h2>Flawless Themes One Click Demo Import<h2></div>';
 
 	    return $default_text;
 	}
-	add_filter( 'pt-ocdi/plugin_intro_text', 'ocdi_plugin_intro_text' );
+	add_filter( 'pt-ocdi/plugin_intro_text', 'flawless_demo_importer_ocdi_plugin_intro_text' );
         return array(
 			array(
-                'import_file_name' => esc_html__('Job Stack Theme', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Job Stack Theme', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/jobstack/jobstack.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/jobstack/jobstack.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/jobstack/jobstack.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/jobstack.png',
-                'import_notice' => esc_html__('Make Sure you are using the Job Stack Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Job Stack Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/jobstack/'),
             ),
             array(
-                'import_file_name' => esc_html__('Music Artist/ Music Guru', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Music Artist/ Music Guru', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/music-artist-free/music-artist-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/music-artist-free/music-artist-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/music-artist-free/music-artist-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/music-artist-free.png',
-                'import_notice' => esc_html__('Make Sure you are using the Music Artist / Music Guru Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Music Artist / Music Guru Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/music-artist-free/'),
 			),
 			array(
-                'import_file_name' => esc_html__('Espy Jobs Theme', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Espy Jobs Theme', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/espyjobs/espyjobs.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/espyjobs/espyjobs.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/espyjobs/espyjobs.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/espyjobs.png',
-                'import_notice' => esc_html__('Make Sure you are using the Espy Jobs Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Espy Jobs Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/espyjobsfree'),
             ),
 			array(
-                'import_file_name' => esc_html__('Podcast Guru', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Podcast Guru', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/podcast/podcast.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/podcast/podcast.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/podcast/podcast.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/podcast.png',
-                'import_notice' => esc_html__('Make Sure you are using the Podcast Guru Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Podcast Guru Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/podcast-guru-free'),
             ),
 			array(
-                'import_file_name' => esc_html__('Lawyer Firm', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Lawyer Firm', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lawyer/lawyer.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lawyer/lawyer.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lawyer/lawyer.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/lawyer.png',
-                'import_notice' => esc_html__('Make Sure you are using the Lawyer Firm Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Lawyer Firm Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/lawyerfirm/'),
             ),
 			array(
-                'import_file_name' => esc_html__('Flawless Recipe', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Flawless Recipe', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/flawlessrecipe/flawlessrecipe.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/flawlessrecipe/flawlessrecipe.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/flawlessrecipe/flawlessrecipe.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/flawlessrecipe.png',
-                'import_notice' => esc_html__('Make Sure you are using the Flawless Recipe Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Flawless Recipe Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/flawlessrecipe'),
             ),
 			array(
-                'import_file_name' => esc_html__('Coursemax', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Coursemax', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/coursemax/coursemax.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/coursemax/coursemax.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/coursemax/coursemax.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/coursemax.png',
-                'import_notice' => esc_html__('Make Sure you are using the Coursemax Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Coursemax Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/coursemax/'),
             ),
 			array(
-                'import_file_name' => esc_html__('Prato Store', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Prato Store', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/prato-store/prato-store.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/prato-store/prato-store.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/prato-store/prato-store.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/prato-store.png',
-                'import_notice' => esc_html__('Make Sure you are using the Prato Store Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Prato Store Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/pratostore/'),
             ),
 			array(
-                'import_file_name' => esc_html__('Ekta Directory', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Ekta Directory', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ekta/ekta.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ekta/ekta.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ekta/ekta.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/ekta.png',
-                'import_notice' => esc_html__('Make Sure you are using the Ekta Directory Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Ekta Directory Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.ektadirectory.com/ekta-directory-free/'),
             ),
         	array(
-                'import_file_name' => esc_html__('FT Charity NGO', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('FT Charity NGO', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-charity-ngo-free/charity-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-charity-ngo-free/charity-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-charity-ngo-free/charity-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/charity-free.png',
-                'import_notice' => esc_html__('Make Sure you are using the FT Charity NGO Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the FT Charity NGO Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/ft-charity-ngo-free'),
             ),
 			array(
-                'import_file_name' => esc_html__('Awe Blog', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Awe Blog', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/awe-blog-free/awe-blog-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/awe-blog-free/awe-blog-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/awe-blog-free/awe-blog-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/awe-blog-free.png',
-                'import_notice' => esc_html__('Make Sure you are using the Awe Blog Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Awe Blog Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/awe-blog-free'),
             ),
             array(
-                'import_file_name' => esc_html__('Hotel Vivanta', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Hotel Vivanta', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/vivanta-free/vivanta-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/vivanta-free/vivanta-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/vivanta-free/vivanta-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/hotel-vivanta-free.jpg',
-                'import_notice' => esc_html__('Make Sure you are using the Hotel Vivanta Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Hotel Vivanta Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/vivanta-free/'),
             ),
             array(
-                'import_file_name' => esc_html__('LMS Academic', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('LMS Academic', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lms-free/lms-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lms-free/lms-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/lms-free/lms-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/lms-academic-free.png',
-                'import_notice' => esc_html__('Make Sure you are using the LMS Academic Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the LMS Academic Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/lms-academic-free'),
             ),
             array(
-                'import_file_name' => esc_html__('FT Directory Listing', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('FT Directory Listing', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-directory-free/ft-directory-free.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-directory-free/ft-directory-free.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/ft-directory-free/ft-directory-free.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/ft-directory-free.png',
-                'import_notice' => esc_html__('Make Sure you are using the FT Directory Listing Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the FT Directory Listing Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/ft-directory-listing/'),
             ),
             array(
-                'import_file_name' => esc_html__('Hotel Inn', 'flawless-demo-importer'),
+                'import_file_name' => esc_html__('Hotel Inn', 'flawless-themes-demo-importer'),
                 'import_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/inn-free/inn.xml',
                 'import_widget_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/inn-free/inn.wie',
                 'import_customizer_file_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/demo/inn-free/inn.dat',
                 'import_preview_image_url' => trailingslashit( plugin_dir_url( dirname( __FILE__ ) ) ) . 'public/img/hotel-inn.png',
-                'import_notice' => esc_html__('Make Sure you are using the Hotel Inn Theme (Free Version)', 'flawless-demo-importer'),
+                'import_notice' => esc_html__('Make Sure you are using the Hotel Inn Theme (Free Version)', 'flawless-themes-demo-importer'),
                 'preview_url' => ('https://demo.flawlessthemes.com/hotelinn-free/'),
             )
         );
     }
 }
-if (in_array('one-click-demo-import/one-click-demo-import.php', apply_filters('active_plugins', get_option('active_plugins')))) {
 
-    add_filter('pt-ocdi/import_files', 'flawlessthemes_importer_import_files');
-    add_action( 'pt-ocdi/after_import', 'flawlessthemes_importer_after_import_setup' );
-}
-else{
-	function sample_admin_notice__error() {
-	    $class = 'notice notice-error';
-	    $message = __( 'You have not installed or activated the One Click Demo Import Plugin', 'flawless-demo-importer' );
-	 
-	    printf( '<div class="%1$s"><p>%2$s</p></div>', esc_attr( $class ), esc_html( $message ) ); 
-	}
-	add_action( 'admin_notices', 'sample_admin_notice__error' );
+
+$active_plugins = apply_filters(
+    'flawless_demo_importer_active_plugins',
+    get_option( 'flawless_demo_importer_active_plugins', array() )
+);
+
+// Ensure active plugins is always an array.
+if ( ! is_array( $active_plugins ) ) {
+    $active_plugins = array();
 }
 
+if ( in_array( 'one-click-demo-import/one-click-demo-import.php', $active_plugins, true ) ) {
+
+    add_filter( 'pt-ocdi/import_files', 'flawless_demo_importer_import_files' );
+    add_action( 'pt-ocdi/after_import', 'flawless_demo_importer_after_import_setup' );
+
+} else {
+
+    if ( ! function_exists( 'flawless_demo_importer_sample_admin_notice__error' ) ) {
+
+        function flawless_demo_importer_sample_admin_notice__error() {
+            $class = 'notice notice-error';
+            $message = __( 'You have not installed or activated the One Click Demo Import Plugin', 'flawless-themes-demo-importer' );
+
+            printf(
+                '<div class="%1$s"><p>%2$s</p></div>',
+                esc_attr( $class ),
+                esc_html( $message )
+            );
+        }
+    }
+
+    add_action( 'admin_notices', 'flawless_demo_importer_sample_admin_notice__error' );
+}
 
 
-function flawlessthemes_importer_after_import_setup() {
+
+function flawless_demo_importer_after_import_setup() {
     // Assign menus to their locations.
     $main_menu = get_term_by( 'name', 'Primary', 'nav_menu' );
 

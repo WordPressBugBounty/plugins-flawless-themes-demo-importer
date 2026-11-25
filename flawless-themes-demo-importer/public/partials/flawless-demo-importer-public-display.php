@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) 
+    exit; // Exit if accessed directly
+
 /**
  * Provide a public-facing view for the plugin
  *

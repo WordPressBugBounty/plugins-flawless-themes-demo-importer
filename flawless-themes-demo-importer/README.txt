@@ -1,13 +1,15 @@
 === Flawless Themes Demo Importer ===
 Contributors: flawlesstheme
-Donate link: flawlessthemes.com
+Donate link: https://flawlessthemes.com/
 Tags: content, data, demo, import, widgets
 Requires at least: 6.0
-Tested up to: 7.1.4
-Stable tag: 1.0.22
+Tested up to: 7.1
+Stable tag: 1.0.24
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+Import demo content for Flawless Themes free WordPress themes easily using the Flawless Themes Demo Importer plugin.
 
 == Description ==
 
@@ -93,6 +95,15 @@ Yes, This plugin depends on One Click Demo Import plugin, Install both of the pl
 
 	= 1.0.22 =
 	* Compatibility testing with WordPress 7.1.4
+
+	= 1.0.23 =
+	* Added compatibility with WordPress 7.1.5.
+	* Fixed text domain mismatch.
+	* Fixed plugin naming convention warnings.
+	* Improved compatibility with WordPress.org Plugin Check.
+
+	= 1.0.24 =
+	* Fixed a demo importer plugin activation error.
 
 == Upgrade Notice ==
 
